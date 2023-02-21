@@ -14,8 +14,8 @@ type NavLinkProps = {
 
 function Navbar(props: NavbarProps): JSX.Element {
   return (
-    <nav className="m-auto xl:w-[1280px] flex py-4 px-2">
-      {props.logo && <img src={props.logo} alt="" />}
+    <nav className="m-auto xl:w-[1280px] py-4 px-2 hidden md:flex">
+      {props.logo && <img src={props.logo} alt="" className="h-8 mr-2" />}
       {props.title && <h1 className="font-['Squada_One'] text-3xl">{props.title}</h1>}
       <ul className="flex justify-start ml-4 text-lg">
         {props.children}</ul>

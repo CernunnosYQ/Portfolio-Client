@@ -2,17 +2,17 @@ import Button from "./Button"
 import { skill_icons } from "../Data"
 
 type ProjectProps = {
-    title: string,
-    img_src: string,
-    description: string,
-    blogpost: string,
-    skills: string[],
-    demo: string,
-    github: string,
+  title: string,
+  img_src: string,
+  description: string,
+  blogpost: string,
+  skills: string[],
+  demo: string,
+  github: string,
 }
 
 function Project(props: ProjectProps): JSX.Element {
-  const skills = props.skills.map((skill) => skill_icons[skill])
+  const skills = props.skills.map((skill, i) => <span key={i}>{skill_icons[skill]}</span>)
 
   return (
     <div className="flex w-full h-full mt-10 bg-slate-800 rounded-xl overflow-hidden \

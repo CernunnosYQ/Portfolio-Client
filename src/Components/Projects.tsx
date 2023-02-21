@@ -8,8 +8,9 @@ type ProjectsProps = {
 }
 
 function Projects(props: ProjectsProps): JSX.Element {
-  const project_list = ProjectsData.map((project) => 
+  const project_list = ProjectsData.map((project, index) => 
     <Project
+      key={index}
       title={project.title}
       img_src={project.image}
       description={project.description}

@@ -1,4 +1,5 @@
 import Navbar, { NavLink } from "./Components/Navbar"
+import NavbarOutOfCanvas from "./Components/NavbarOutOfCanvas"
 import Presenting from "./Components/Presenting"
 import Skills from "./Components/Skills"
 import Projects from "./Components/Projects"
@@ -7,17 +8,25 @@ import Footer from "./Components/Footer"
 import { animateScroll as scroll } from "react-scroll"
 
 import { FaArrowUp } from "react-icons/fa"
+import Logo from "./assets/git.svg"
 
 function App() {
 
   return (
-    <div id='top' className="bg-gradient-to-br from-slate-900 to-slate-800 text-neutral-200">
+    <div id='top' className="bg-gradient-to-br from-slate-900 to-slate-800 \
+      text-neutral-200 overflow-hidden">
       <Navbar title="@CernunnosYQ">
         <NavLink title="Blog" href="#" />
         <NavLink title="Habilidades" href="skills" />
         <NavLink title="Proyectos" href="projects" />
         <NavLink title="Contacto" href="contact" />
       </Navbar>
+      <NavbarOutOfCanvas title="@CernunnosYQ">
+        <NavLink title="Blog" href="#" />
+        <NavLink title="Habilidades" href="skills" />
+        <NavLink title="Proyectos" href="projects" />
+        <NavLink title="Contacto" href="contact" />
+      </NavbarOutOfCanvas>
       <main>
         <Presenting />
         <Skills id="skills" />
