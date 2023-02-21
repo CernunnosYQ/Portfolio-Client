@@ -1,10 +1,7 @@
 import Button from "./Button"
 import Heading from "./Heading"
-import { SiHtml5, SiCss3, SiJavascript, SiTypescript,
-         SiPython, SiTailwindcss, SiPostgresql, SiReact } from "react-icons/si"
 
-import Placeholder from "../assets/placeholder.webp"
-import React from "react"
+import { ProjectsData, skill_icons } from "../Data"
 
 type ProjectsProps = {
   id: string
@@ -13,62 +10,30 @@ type ProjectsProps = {
 type ProjectProps = {
   title: string,
   img_src: string,
-  children: React.ReactNode,
+  description: string,
   blogpost: string,
   skills: string[],
   demo: string,
   github: string,
 }
 
-const skill_icons: { [key: string]: JSX.Element } = {
-  html: <SiHtml5 />,
-  css: <SiCss3 />,
-  js: <SiJavascript />,
-  ts: <SiTypescript />,
-  tailwind: <SiTailwindcss />,
-  react: <SiReact />,
-  python: <SiPython />,
-  postgres: <SiPostgresql />,
-}
-
 function Projects(props: ProjectsProps): JSX.Element {
+  const project_list = ProjectsData.map((project) => 
+    <Project
+      title={project.title}
+      img_src={project.image}
+      description={project.description}
+      blogpost={project.blogpost}
+      skills={project.skills}
+      demo={project.demo}
+      github={project.repo} />
+  )
+
   return (
     <section className="xl:w-[1280px] mx-auto pt-8 ">
       <Heading id={props.id} title="Proyectos" />
       <div className="lg:w-[1024px] mx-auto">
-        <Project
-          title="Test"
-          img_src={Placeholder}
-          blogpost="#"
-          skills={['html', 'css', 'js', 'ts']}
-          demo="#"
-          github="#">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut,
-          est minima ad omnis explicabo labore deserunt. Ex impedit blanditiis,
-          temporibus maiores nihil error non recusandae!
-        </Project>
-        <Project
-          title="Test"
-          img_src={Placeholder}
-          blogpost="#"
-          skills={['html', 'css', 'js', 'ts']}
-          demo="#"
-          github="#">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut,
-          est minima ad omnis explicabo labore deserunt. Ex impedit blanditiis,
-          temporibus maiores nihil error non recusandae!
-        </Project>
-        <Project
-          title="Test"
-          img_src={Placeholder}
-          blogpost="#"
-          skills={['html', 'css', 'js', 'ts']}
-          demo="#"
-          github="#">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut,
-          est minima ad omnis explicabo labore deserunt. Ex impedit blanditiis,
-          temporibus maiores nihil error non recusandae!
-        </Project>
+        {project_list}
       </div>
     </section>
   )
@@ -83,7 +48,7 @@ function Project(props: ProjectProps): JSX.Element {
       <img src={props.img_src} alt="" className="w-1/3 mr-8" />
       <div className="flex flex-col justify-evenly p-8">
         <h3 className="text-3xl font-display"><a href={props.blogpost}>{props.title}</a></h3>
-        <p>{props.children} <a href={props.blogpost} className="text-sky-600">Leer más.</a></p>
+        <p>{props.description} <a href={props.blogpost} className="text-sky-600">Leer más.</a></p>
         <div>
           <p className="text-xl mb-4 font-semibold">Skills:</p>
           <div className="flex gap-4 text-2xl">
