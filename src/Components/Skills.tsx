@@ -37,11 +37,11 @@ function AboutMe(props: AboutMeProps) {
 
 function Skill(props: SkillProps): JSX.Element {
   return (
-    <div className="w-1/4 p-3">
-      <div className="bg-slate-800 flex justify-center items-center rounded-lg border-2 \
-        border-sky-800 pr-4 py-3 transition cursor-pointer shadow-xl hover:scale-105">
-        <img src={props.icon} alt="" className="mx-4 h-10" />
-        <p className="text-3xl">{props.title}</p>
+    <div className="w-1/2 md:w-1/3 lg:w-1/4 p-3">
+      <div className="bg-slate-800 flex flex-col sm:flex-row sm:gap-2 justify-center items-center rounded-lg border-2 \
+        border-sky-800 px-4 py-3 transition cursor-pointer shadow-xl hover:scale-105">
+        <img src={props.icon} alt="" className="h-10" />
+        <p className="text-2xl sm:text-3xl">{props.title}</p>
       </div>
     </div>
   )
