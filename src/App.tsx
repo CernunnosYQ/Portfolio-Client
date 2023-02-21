@@ -4,7 +4,7 @@ import Skills from "./Components/Skills"
 import Projects from "./Components/Projects"
 import Contact from "./Components/Contact"
 import Footer from "./Components/Footer"
-import { Link, animateScroll as scroll } from "react-scroll"
+import { animateScroll as scroll } from "react-scroll"
 
 import { FaArrowUp } from "react-icons/fa"
 
