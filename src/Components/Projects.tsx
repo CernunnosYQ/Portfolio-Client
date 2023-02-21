@@ -21,7 +21,7 @@ function Projects(props: ProjectsProps): JSX.Element {
   )
 
   return (
-    <section className="xl:w-[1280px] mx-auto pt-8 ">
+    <section className="xl:w-[1280px] mx-auto p-3 pt-8">
       <Heading id={props.id} title="Proyectos" />
       <div className="lg:w-[1024px] mx-auto">
         {project_list}
