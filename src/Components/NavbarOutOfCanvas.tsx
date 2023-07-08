@@ -24,7 +24,7 @@ function NavbarOutOfCanvas(props: NavbarOOCProps) {
         <FaBars />
       </button>
     </div>
-    <div className={(isHidden ? "hidden" : "") + " fixed z-15 bg-slate-800 h-screen w-screen sm:w-2/3 top-0 sm:right-0 \
+    <div className={(isHidden ? "hidden" : "") + " fixed z-20 bg-slate-800 h-screen w-screen sm:w-2/3 top-0 sm:right-0 \
       transition-all duration-500"}>
       <nav className="m-4 mr-6">
         <div>
